@@ -1,46 +1,71 @@
+/* Reset */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#f4f4f4;
+    background:#f8fafc;
     color:#333;
-    line-height:1.6;
+    line-height:1.8;
 }
 
+/* Cabeçalho */
 header{
-    background:#2c3e50;
+    background:linear-gradient(135deg,#1e3a8a,#2563eb);
     color:white;
     text-align:center;
-    padding:40px 20px;
+    padding:70px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:1.2rem;
+    opacity:0.9;
+}
+
+/* Menu */
+nav{
+    background:#0f172a;
+    padding:18px;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 nav{
-    background:#34495e;
-    text-align:center;
-    padding:15px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
+    font-weight:600;
+    transition:0.3s;
 }
 
 nav a:hover{
-    color:#f1c40f;
+    color:#60a5fa;
 }
 
+/* Banner */
 .banner{
-    height:400px;
-    background:linear-gradient(
-    rgba(0,0,0,0.5),
-    rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac');
+    height:500px;
+    background:
+    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1517048676732-d65bc937f952");
     background-size:cover;
     background-position:center;
     display:flex;
@@ -51,80 +76,127 @@ nav a:hover{
 
 .texto-banner{
     color:white;
+    max-width:700px;
 }
 
 .texto-banner h2{
-    font-size:3rem;
-    margin-bottom:15px;
+    font-size:3.5rem;
+    margin-bottom:20px;
 }
 
+.texto-banner p{
+    font-size:1.3rem;
+}
+
+/* Seções */
 section{
-    padding:60px 10%;
+    padding:80px 10%;
 }
 
 section h2{
     text-align:center;
     margin-bottom:30px;
-    color:#2c3e50;
+    color:#1e3a8a;
+    font-size:2.2rem;
 }
 
+/* Cards */
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
 }
 
 .card{
     background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    transition:0.3s;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.4s;
+    border-top:5px solid #2563eb;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#1e3a8a;
+    margin-bottom:15px;
+}
+
+/* Impactos */
+#impactos{
+    background:#eef4ff;
+    border-radius:20px;
+    margin:40px auto;
 }
 
 #impactos ul{
-    max-width:700px;
+    max-width:800px;
     margin:auto;
 }
 
 #impactos li{
-    margin:12px 0;
+    margin:15px 0;
+    font-size:1.1rem;
 }
 
+/* Ações */
 .acoes{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
 .acoes div{
     background:white;
-    padding:20px;
-    width:280px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
 }
 
+.acoes div:hover{
+    transform:scale(1.03);
+}
+
+.acoes h3{
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+/* Rodapé */
 footer{
-    background:#2c3e50;
+    background:#0f172a;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:30px;
+    margin-top:50px;
 }
 
+/* Responsividade */
 @media(max-width:768px){
 
-    .texto-banner h2{
-        font-size:2rem;
+    header h1{
+        font-size:2.2rem;
     }
 
-    nav a{
-        display:block;
-        margin:10px 0;
+    .texto-banner h2{
+        font-size:2.2rem;
+    }
+
+    .texto-banner p{
+        font-size:1rem;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    section{
+        padding:60px 7%;
     }
 }
